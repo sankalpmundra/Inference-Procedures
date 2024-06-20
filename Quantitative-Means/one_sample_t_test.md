@@ -43,6 +43,9 @@ from scipy.stats import t
 ```
 
 ```python
+# Significance level for the test
+alpha = 0.05
+
 # Population mean parameter (µ)
 population_mean = 75
 
@@ -78,12 +81,25 @@ p_value = t.sf(abs(t_statistic), df)
 Finally, we can compare the 'P-value' with our significance level and conclude the significance test:
 
 ```python
-# Comparing P-value and α to conclude the test
-if p_value < 0.05:
-    print("There is significant evidence that the average exam score has increased since last year.")
-else:
-    print("There is no significant evidence that the average exam score has increased.")
+# Function to conclude the one-sample t test
+def t_test_conclude(p_val, significance_level):
+    """
+    Checks if the P-value indicates a significant difference based on the given significance level.
 
+    Args:
+        p_val (float): The p-value calculated from the significance test.
+        significance_level (float): The significance level for the same significance test.
+
+    Returns:
+        A message indicating whether the average Physics exam score is significantly greater from last year.
+    """
+    if p_val < significance_level:
+        print("There is significant evidence that the average exam score has increased since last year.")
+    else:
+        print("There is no significant evidence that the average exam score has increased.")
+
+# Conclude the test:
+t_test_conclude(p_value, alpha)
 ```
 
 ### Conclusion
