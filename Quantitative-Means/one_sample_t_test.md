@@ -19,21 +19,21 @@ We want to perform a significance test, at the $α = 0.05$ significance level, o
 $$ H_o: µ = 75 $$
 $$ H_a: µ > 75 $$
 
-_where $µ$ represents the average score of the students on the Physics exam_
+_where 'µ' represents the average score of the students on the Physics exam_
 
 #### Conditions for inference on means:
 
 1. **Random**: As stated in the question, Sankalp took a random sample of exam scores from all the students who gave the Physics exam.
 2. **Normal**: The sampling distribution of the sample mean (x̄) needs to be approximately normal. Since the sample size was larger than 30, we can assume that the distribution is approximately normal.
 
-$$ n >= 30 $$
-$$ 31 >= 30 $$
+$$ n ≥ 30 $$
+$$ 31 ≥ 30 $$
 
 3. **Independence**: When sampling without replacement, the sample size should be smaller than **10%** of the population. In this case, we can assume independence because the sample is indeed smaller than 10% of all Physics students giving the exam
 
-$$ n <= 0.1(N) $$
-$$ 31 <= 0.1(350) $$
-$$ 31 <= 35 $$
+$$ n ≤ 0.1(N) $$
+$$ 31 ≤ 0.1(350) $$
+$$ 31 ≤ 35 $$
 
 Since all the conditions for inference have been met, we will proceed to conduct a one-sample _t_ test. We will begin by extracting and noting down all the data from the question and calculating the sample statistics.
 
@@ -82,7 +82,7 @@ Finally, we can compare the 'P-value' with our significance level and conclude t
 
 ```python
 # Function to conclude the one-sample t test
-def t_test_conclude(p_val, significance_level):
+def conclude_ttest1(p_val, significance_level):
     """
     Checks if the P-value indicates a significant difference based on the given significance level.
 
@@ -91,15 +91,21 @@ def t_test_conclude(p_val, significance_level):
         significance_level (float): The significance level for the same significance test.
 
     Returns:
-        A message indicating whether the average Physics exam score is significantly greater from last year.
+        A message indicating if there is statistical evidence to reject the test's null hypothesis.
     """
     if p_val < significance_level:
-        print("There is significant evidence that the average exam score has increased since last year.")
+        print("".join(["Since the P-value is smaller than the significance level (",
+                       str(p_val), " < ", str(significance_level), "), ", 
+                       "we reject the null hypothesis because there is significant evidence to suggest that ",
+                       "the average exam score has increased since last year."]))
     else:
-        print("There is no significant evidence that the average exam score has increased.")
+        print("".join(["Since the P-value is not smaller than the significance level (", 
+                       str(p_val), " >= ", str(significance_level), "), ", 
+                       "we fail to reject the null hypothesis because there is no significant evidence to suggest that ", 
+                       "the average exam score has increased."]))
 
-# Conclude the test:
-t_test_conclude(p_value, alpha)
+# Conclusion:
+conclude_ttest1(p_value, alpha)
 ```
 
 ### Conclusion

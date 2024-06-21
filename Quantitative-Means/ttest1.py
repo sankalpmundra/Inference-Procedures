@@ -1,6 +1,18 @@
 import numpy as np
 from scipy.stats import t
 
+"""
+Sankalp is a Physics teacher at Northeastern University and his 350 students just gave the 3rd year Physics exam. Last year, 
+the same students obtained a mean score of 75%. Sankalp then made some changes to his teaching style and wants to determine whether 
+his students have improved.
+
+He takes a simple random sample (SRS) of 31 students from all the students who gave the exam and notes down their exam scores. 
+
+exam_scores = [82, 79, 83, 87, 78, 78, 80, 83, 79, 82, 77, 77, 81, 65, 71, 74, 74, 81, 75, 72, 87, 78, 80, 72, 67, 80, 74, 90, 76, 59, 76]
+
+Conduct the appropriate significance test at the α = 0.05 significance level to conclude Sankalp's hypothesis.
+"""
+
 # Significance level for the test
 alpha = 0.05
 
@@ -28,7 +40,7 @@ df = sample_size - 1
 p_value = t.sf(abs(t_statistic), df)
 
 # Function to conclude the one-sample t test
-def t_test_conclude(p_val, significance_level):
+def conclude_ttest1(p_val, significance_level):
     """
     Checks if the P-value indicates a significant difference based on the given significance level.
 
@@ -37,12 +49,18 @@ def t_test_conclude(p_val, significance_level):
         significance_level (float): The significance level for the same significance test.
 
     Returns:
-        A message indicating whether the average Physics exam score is significantly greater from last year.
+        A message indicating if there is statistical evidence to reject the test's null hypothesis.
     """
     if p_val < significance_level:
-        print("There is significant evidence that the average exam score has increased since last year.")
+        print("".join(["Since the P-value is smaller than the significance level (",
+                       str(p_val), " < ", str(significance_level), "), ", 
+                       "we reject the null hypothesis because there is significant evidence to suggest that ",
+                       "the average exam score has increased since last year."]))
     else:
-        print("There is no significant evidence that the average exam score has increased.")
+        print("".join(["Since the P-value is not smaller than the significance level (", 
+                       str(p_val), " >= ", str(significance_level), "), ", 
+                       "we fail to reject the null hypothesis because there is no significant evidence to suggest that ", 
+                       "the average exam score has increased."]))
 
-# Conclude the test:
-t_test_conclude(p_value, alpha)
+# Conclusion:
+conclude_ttest1(p_value, alpha)
