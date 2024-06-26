@@ -33,23 +33,18 @@ $$ \text{standardized test statistic} = \frac{\text{statistic - parameter}}{\tex
 
 The test statistic for a one-sample _z_ test is denoted by $z$, and this statistic determines how many standard errors the sample proportion $(\hat{p})$ is away from the hypothesized population proportion $(p_0)$. The $z$ statistic is given by:
 
-$$ z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} \quad ;$$
+$$ z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} \quad ; $$
 
-$$ \hat{p} : \text{Sample proportion statistic} $$
-
-$$ p_0 : \text{Hypothesized population proportion parameter} $$
-
-$ \hat{p} : \text{Sample proportion statistic} $
-
-$ p_0 : \text{Hypothesized population proportion parameter} $
-
-$ \sqrt{\frac{p_0(1 - p_0)}{n}} : $ Standard error of the sample proportion statistic, where
-
-- $ p_0 : $ population proportion parameter for a **success**
-
-- $ 1 - p_0 : $ population proportion parameter for a **failure**
-
-- $ n : $ sample size
+$$
+\begin{aligned}
+& \hat{p} : \text{Sample proportion statistic} \\
+& p_0 : \text{Hypothesized population proportion parameter} \\
+& \sqrt{\frac{p_0(1 - p_0)}{n}} : \text{Standard error of the sample proportion statistic, where} \\
+& p_0 : \text{population proportion parameter for a success} \\
+& 1 - p_0 : \text{population proportion parameter for a failure} \\
+& n : \text{sample size}
+\end{aligned}
+$$
 
 A standardized test statistic is used to compute the _P-Value_ of a test. This value represents the probability of obtaining a value as extreme as the test statistic, given the null hypothesis $(H_0)$ is true. In the case of a one-sample _z_ test about a proportion, this value represents the chances of obtaining a standardized test statistic as extreme as the calculated $z$ statistic. However, the 'P-Value' also depends on the condition of the test's alternative hypothesis. 
 
@@ -69,4 +64,18 @@ $$ \Downarrow $$
 
 $$ \text{P-Value} = 2 * P\left( Z \geq |z| \ \middle| \ H_0 \text{ is true} \right) $$
 
-Once we know the _P-Value_ of our sample statistic, we can conclude the significance test.
+Once we know the _P-Value_ of our sample statistic, we can conclude the significance test by comparing the value to the pre-determined significance level $(\alpha)$ for the test. The significance level is the threshold probability for rejecting the null hypothesis, controlling the Type I error rate, and it is set before gathering data and conducting the test for the purpose of carrying out an ethical significance test. 
+
+To conclude a one-sample _z_ test about a proportion, or any significance test for that matter, we compare the _P-Value_ to the $\alpha$ level, and there are two possible conclusions we can make.
+
+When the P-Value is **lesser than** the significance level, there is statistically significant evidence to prove the claim of the alternative hypothesis. As such, we reject the null hypothesis and accept the alternative hypothesis.
+
+$$ \text{P-Value} < \alpha \Rightarrow \text{Reject} H_0 \Rightarrow \text{Accept} H_a $$
+
+However, in the case that the P-Value is **greater than or equal to** the significance level, there is not sufficient evidence to prove the alternative hypothesis. Hence, we fail to reject the null hypothesis, and for those reasons, we can not accept the alternative hypothesis.
+
+$$ \text{P-Value} \geq \alpha \Rightarrow \text{Fail to reject} H_0 \Rightarrow \text{Can not accept} H_a $$
+
+> Note: In this case, we are not **rejecting** the alternative hypothesis, we just fail to reject the null hypothesis, and it could very much be the case that the test had a Type II error, where the null hypothesis was indeed false but we wrongly failed to reject it.
+
+---
