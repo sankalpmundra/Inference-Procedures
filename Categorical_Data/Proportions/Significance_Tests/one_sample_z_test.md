@@ -9,7 +9,9 @@ $$ H_0 : p = p_0 $$
 The alternative hypothesis could take one of three forms, depending on the context of the test:
 
 $$ H_a : p < p_0 $$
+
 $$ H_a : p > p_0 $$
+
 $$ H_a : p \neq p_0 $$
 
 Once we have a clear view of the objectives of the test, we can craft a plan to gather the relevant data from the sample. However, a certain set of conditions need to be met in order to conduct a valid significance test about a proportion.
@@ -17,29 +19,31 @@ Once we have a clear view of the objectives of the test, we can craft a plan to 
 1. **Random:** Data needs to come from a random sample from the population of interest or a randomized experiment. This can be achieved through a simple random sample (SRS), or the more commonly used stratified random sampling technique.
 2. **Normal:** The sampling distribution of the sample proportion statistic $(\hat{p})$ must be approximately normal. This can be achieved with more than 10 successes and failures each in the sample.
 
-$$ np_0 \geq 10 \quad \wedge \quad n(1 - p_0) \geq 10 $$
+$$ np_0 \geq 10 \quad \text{and} \quad n(1 - p_0) \geq 10 $$
 
 3. **Independence:** Each observation in the sample must be independent and can not be influenced by each other. When sampling without replacement, the sample size shouldn't exceed 10% of its population size.
 
 $$ n \leq 0.1(N) $$
 
-If _all_ the conditions for inference on proportions are met, we can proceed to conduct a one-sample _z_ test.
+If **all** the conditions for inference on proportions are met, we can proceed to conduct a one-sample _z_ test.
 
 The standardized test statistic for a significance test is calculated to determine how many standard errors the sample statistic is away from the hypothesized population parameter. The general formula for a standardized test statistic is:
 
 $$ \text{standardized test statistic} = \frac{\text{statistic - parameter}}{\text{standard error of statistic}} $$
 
-The test statistic for a one-sample _z_ test is denoted by '$z$', and this statistic determines how many standard errors the sample proportion $(\hat{p})$ is away from the hypothesized population proportion $(p_0)$. The $z$ statistic is given by:
+The test statistic for a one-sample _z_ test is denoted by $z$, and this statistic determines how many standard errors the sample proportion $(\hat{p})$ is away from the hypothesized population proportion $(p_0)$. The $z$ statistic is given by:
 
-$$ z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} $$
+$$ z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} \quad ;$$
 
-Here, 
+$$ \hat{p} : \text{Sample proportion statistic} $$
 
-- $ \hat{p} : $ Sample proportion statistic
+$$ p_0 : \text{Hypothesized population proportion parameter} $$
 
-- $ p_0 : $ Hypothesized population proportion parameter
+$ \hat{p} : \text{Sample proportion statistic} $
 
-- $ \sqrt{\frac{p_0(1 - p_0)}{n}} : $ standard error of the sample proportion statistic, where
+$ p_0 : \text{Hypothesized population proportion parameter} $
+
+$ \sqrt{\frac{p_0(1 - p_0)}{n}} : $ Standard error of the sample proportion statistic, where
 
 - $ p_0 : $ population proportion parameter for a **success**
 
@@ -55,7 +59,7 @@ $$ H_a : p < p_0 \quad \text{or} \quad H_a : p > p_0 $$
 
 $$ \Downarrow $$
 
-$$ \text{P-Value} = P\left( Z \geq |z| \; \middle| \; H_0 \text{ is true} \right) $$
+$$ \text{P-Value} = P\left( Z \geq |z| \ \middle| \ H_0 \text{ is true} \right) $$
 
 For a two-tailed test, the alternative hypothesis is claiming that the population proportion is different to the hypothesized proportion in the null hypothesis. As a result, the _P-Value_ is doubled, to account for both the left and right tails of the sampling distribution of the sample proportion $(\hat{p})$, and is given by:
 
@@ -63,6 +67,6 @@ $$ H_a : p \neq p_0 $$
 
 $$ \Downarrow $$
 
-$$ \text{P-Value} = 2 * P\left( Z \geq |z| \; \middle| \; H_0 \text{ is true} \right) $$
+$$ \text{P-Value} = 2 * P\left( Z \geq |z| \ \middle| \ H_0 \text{ is true} \right) $$
 
 Once we know the _P-Value_ of our sample statistic, we can conclude the significance test.
