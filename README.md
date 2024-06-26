@@ -1,6 +1,6 @@
 # Inference Procedures
 
-Conducting inference procedures on categorical and quantitative data using Python and Jupiter notebooks.
+Conducting inference procedures on categorical and quantitative data using Python and Jupiter notebooks. fg
 
 ### Proportions
 
