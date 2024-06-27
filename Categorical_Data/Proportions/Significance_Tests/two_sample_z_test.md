@@ -18,7 +18,9 @@ $$ H_a : p_1 - p_2 > 0 $$
 $$ H_a : p_1 - p_2 \neq 0 $$
 
 > **Interlude:** When the null hypothesis assumes that there is no difference between the two population proportions $(p_1 = p_2)$, we use a combined proportion statistic for the sample proportion statistics:
+> 
 > $$ \hat{p}_{c} = \frac{x_1 + x_2}{n_1 + n_2} \quad ; $$
+> 
 > $$ 
 \begin{aligned}
 & x_1 : \text{number of successes in the first sample} \\
