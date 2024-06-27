@@ -2,11 +2,14 @@
 
 Significance tests are used to evaluate the strength of the evidence against some null hypothesis $(H_0)$. The alternative hypothesis $(H_a)$ is the claim we are trying to find statistically significant evidence in favor of. To setup a significance test for a population proportion, we start by creating a set of hypotheses.
 
-The null hypothesis should always contain a statement of equality. It is often a statement of "no difference". The null hypothesis, for _z_ tests, are generally written in the form:
+
+### Constructing the Hypotheses
+
+The null hypothesis should always contain a statement of equality. It is often a statement of "no difference". The null hypothesis, for one-sample _z_ tests, are generally written in the form:
 
 $$ H_0 : p = p_0 $$
 
-The alternative hypothesis could take one of three forms, depending on the context of the test:
+The alternative hypothesis could take one of three forms, depending on the nature of the test:
 
 $$ H_a : p < p_0 $$
 
@@ -14,10 +17,13 @@ $$ H_a : p > p_0 $$
 
 $$ H_a : p \neq p_0 $$
 
+
+### Conditions for Inference
+
 Once we have a clear view of the objectives of the test, we can craft a plan to gather the relevant data from the sample. However, a certain set of conditions need to be met in order to conduct a valid significance test about a proportion.
 
 1. **Random:** Data needs to come from a random sample from the population of interest or a randomized experiment. This can be achieved through a simple random sample (SRS), or the more commonly used stratified random sampling technique.
-2. **Normal:** The sampling distribution of the sample proportion statistic $(\hat{p})$ must be approximately normal. This can be achieved with more than 10 successes and failures each in the sample.
+2. **Normal:** The sampling distribution of the sample proportion $(\hat{p})$ must be approximately normal. This can be achieved if the expected number of successes and failures in the sample is greater than or equal to 10.
 
 $$ np_0 \geq 10 \quad \text{and} \quad n(1 - p_0) \geq 10 $$
 
@@ -25,7 +31,10 @@ $$ np_0 \geq 10 \quad \text{and} \quad n(1 - p_0) \geq 10 $$
 
 $$ n \leq 0.1(N) $$
 
-If **all** the conditions for inference on proportions are met, we can proceed to conduct a one-sample _z_ test.
+If **all** the conditions for inference on proportions are met, we can proceed to conduct a one-sample _z_ test about a proportion.
+
+
+### Calculating the Standardized Test Statistic $(z)$
 
 The standardized test statistic for a significance test is calculated to determine how many standard errors the sample statistic is away from the hypothesized population parameter. The general formula for a standardized test statistic is:
 
@@ -46,6 +55,9 @@ $$
 \end{aligned}
 $$
 
+
+### Computing the P-Value
+
 A standardized test statistic is used to compute the _P-Value_ of a test. This value represents the probability of obtaining a value as extreme as the test statistic, given the null hypothesis $(H_0)$ is true. In the case of a one-sample _z_ test about a proportion, this value represents the chances of obtaining a standardized test statistic as extreme as the calculated $z$ statistic. However, the 'P-Value' also depends on the condition of the test's alternative hypothesis. 
 
 For a one-tailed test, the alternative hypothesis claims that the population proportion parameter is simply greater than or lesser than the value proposed by the null hypothesis. As a result, the _P-Value_ is given by:
@@ -64,11 +76,14 @@ $$ \Downarrow $$
 
 $$ \text{P-Value} = 2 * P\left( Z \geq |z| \ \middle| \ H_0 \text{ is true} \right) $$
 
+
+### Concluding the Test
+
 Once we know the _P-Value_ of our sample statistic, we can conclude the significance test by comparing the value to the pre-determined significance level $(\alpha)$ for the test. The significance level is the threshold probability for rejecting the null hypothesis, controlling the Type I error rate, and it is set before gathering data and conducting the test for the purpose of carrying out an ethical significance test. 
 
 To conclude a one-sample _z_ test about a proportion, or any significance test for that matter, we compare the _P-Value_ to the $\alpha$ level, and there are two possible conclusions we can make.
 
-When the P-Value is **lesser than** the significance level, there is statistically significant evidence to prove the claim of the alternative hypothesis. As such, we reject the null hypothesis and accept the alternative hypothesis.
+When the P-Value is **lesser than** the significance level, we have found statistically significant evidence to prove the claim of the alternative hypothesis. As such, we reject the null hypothesis and accept the alternative hypothesis.
 
 $$ \text{P-Value} < \alpha \Longrightarrow \text{Reject} H_0 \Longrightarrow \text{Accept} H_a $$
 
