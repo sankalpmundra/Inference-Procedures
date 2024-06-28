@@ -102,11 +102,11 @@ To conclude a two-sample _z_ test for a difference in proportions, we compare th
 
 When the P-Value is **lesser than** the significance level, we have found statistically significant evidence to prove the claim of the alternative hypothesis. As such, we reject the null hypothesis and accept the alternative hypothesis.
 
-$$ \text{P-Value} < \alpha \Longrightarrow \text{Reject} H_0 \Longrightarrow \text{Accept} H_a $$
+$$ \text{P-Value} < \alpha \Longrightarrow \text{Reject } H_0 \Longrightarrow \text{Accept } H_a $$
 
 However, in the case that the P-Value is **greater than or equal to** the significance level, there is not sufficient evidence to prove the alternative hypothesis. Hence, we fail to reject the null hypothesis, and for those reasons, we can not accept the alternative hypothesis.
 
-$$ \text{P-Value} \geq \alpha \Longrightarrow \text{Fail to reject} H_0 \Longrightarrow \text{Can not accept} H_a $$
+$$ \text{P-Value} \geq \alpha \Longrightarrow \text{Fail to reject } H_0 \Longrightarrow \text{Can not accept } H_a $$
 
 > **Note:** In this case, we are not **rejecting** the alternative hypothesis, we just fail to reject the null hypothesis, and it could very much be the case that the test had a Type II error, where the null hypothesis was indeed false but we wrongly failed to reject it.
 
