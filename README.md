@@ -4,7 +4,7 @@ Conducting inference procedures on categorical and quantitative data using Pytho
 
 ### Proportions
 
-[One-Sample _z_ Test for a Proportion](https://github.com/sankalpmundra/Inference-Procedures/blob/99f0d97db8ca3e7f4afdcb044cae913997ecc66c/Categorical_Data/Proportions/Significance_Tests/one_sample_z_test_example.ipynb)
+[One-Sample _z_ Test for a Proportion](https://github.com/sankalpmundra/Inference-Procedures/blob/497b719e200b8b38b4839bf80db53650a2a4ee6a/Categorical_Data/Proportions/Significance_Tests/one_sample_z_test.md)
 
 [Two-Sample _z_ Test for Difference in Proportions](https://github.com/sankalpmundra/Inference-Procedures/blob/99f0d97db8ca3e7f4afdcb044cae913997ecc66c/Categorical_Data/Proportions/Significance_Tests/two_sample_z_test_example.ipynb)
 
